@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    *
+    {
+        margin: 0;padding: 0;
+    }
+    body
+    {
+        padding: 20px;
+        background: #eee;
+        user-select: none;
+    }
+    h1{
+        font-size: 42px;
+        text-align: center;
+        font-family: monospace;
+    }
+    [type=radio]
+    {
+        display: none;
+    }
+    #slider
+    {
+        height: 35vw;
+        position: relative;
+        perspective: 1000px;
+        transform-style: preserve-3d;
+    }
+    #slider label{
+        margin: auto;
+        width: 60%;
+        height: 100%;
+        border-radius: 4px;
+        position: absolute;
+        left: 0;
+        right: 0;
+        cursor: pointer;
+        transition: all 0.4s ease;
+    }
+
+    #s1:checked ~ #slide4,#s2:checked ~ #slide5,
+    #s3:checked ~ #slide1,#s4:checked ~ #slide2,
+    #s5:checked ~ #slide3{
+        box-shadow: 0 1px 4px 0 rgba(0,0,0,.37);
+        transform: translate3d(-30%,0,-200px);
+    }
+    #s1:checked ~ #slide5,#s2:checked ~ #slide1,
+    #s3:checked ~ #slide2,#s4:checked ~ #slide3,
+    #s5:checked ~ #slide4{
+        box-shadow: 0 6px 10px 0 rgba(0,0,0,.3),0 2px 2px 0 rgba(0,0,0,.2);
+        transform: translate3d(-15%,0,-100px);
+    }
+    #s1:checked ~ #slide1,#s2:checked ~ #slide2,
+    #s3:checked ~ #slide3,#s4:checked ~ #slide4,
+    #s5:checked ~ #slide5{
+        box-shadow: 0 13px 25px 0 rgba(0,0,0,.3),0 11px 7px 0 rgba(0,0,0,.19);
+        transform: translate3d(0,0,0);
+    }
+    #s1:checked ~ #slide2,#s2:checked ~ #slide3,
+    #s3:checked ~ #slide4,#s4:checked ~ #slide5,
+    #s5:checked ~ #slide1{
+        box-shadow: 0 6px 10px 0 rgba(0,0,0,.3),0 2px 2px 0 rgba(0,0,0,.2);
+        transform: translate3d(15%,0,-100px);
+    }
+    #s1:checked ~ #slide3,#s2:checked ~ #slide4,
+    #s3:checked ~ #slide5,#s4:checked ~ #slide1,
+    #s5:checked ~ #slide2{
+        box-shadow: 0 1px 4px 0 rgba(0,0,0,.37);
+        transform: translate3d(30%,0,-200px);
+    } 
+</style>
+<body>
+    <h1>3D Carousel Slider</h1>
+    <br>
+    <section id="slider">
+        <input type="radio" name="slider" id="s1">
+        <input type="radio" name="slider" id="s2">
+        <input type="radio" name="slider" id="s3" checked>
+        <input type="radio" name="slider" id="s4">
+        <input type="radio" name="slider" id="s5">
+
+        <label for="s1" id="slide1">
+            <img src="https://images.unsplash.com/photo-1475809913362-28a064062ccd?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" width="100%">
+        </label>
+        <label for="s2" id="slide2">
+            <img src="https://images.unsplash.com/photo-1463501810073-6e31c827a9bc?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" width="100%">
+        </label>
+        <label for="s3" id="slide3">
+            <img src="https://images.unsplash.com/photo-1497752531616-c3afd9760a11?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" width="100%">
+        </label>
+        <label for="s4" id="slide4">
+            <img src="https://images.unsplash.com/photo-1425082661705-1834bfd09dca?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1355&q=80" width="100%">
+        </label>
+        <label for="s5" id="slide5">
+            <img src="https://images.unsplash.com/photo-1470093851219-69951fcbb533?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" width="100%">
+        </label>
+            
+        </label>
+    </section>
+</body>
+</html>  
